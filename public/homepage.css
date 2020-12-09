@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(211, 140, 140) !important;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* #content {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+} */
+#table {
+    background-color: white;
+    /* width: 95%; */
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 3%;
+}
+#decisionText {
+    padding-left: 1%;
+}
+label {
+   margin-left: 3%;
+   margin-right: 3%;
+}
+.box {
+    width: 50%;
+}
+#leftvideo {
+    margin-left: 3%;
+    float: left;
+}
+#rightvideo {
+    margin-right: 3%;
+    float: right;
+}
+iframe {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#videos {
+    background-color: rgb(211, 140, 140);
+    overflow:auto;
+}
