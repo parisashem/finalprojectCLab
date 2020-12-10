@@ -10,20 +10,34 @@ window.addEventListener('load', function () {
     /* --- Code to RECEIVE a socket message from the server --- */
     let chatBox = document.getElementById('chat-box-msgs');
 
-    //Listen for messages named 'msg' from the server
     socket.on('msg', function (data) {
         console.log("Message arrived!");
+        if (data.id === 1) {
+            
+            let receivedMsg = data.name + ": " + data.msg;
+            let msgEl = document.createElement('p');
+            msgEl.innerHTML = receivedMsg;
+
+            
+            chatBox.appendChild(msgEl);
+           
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
         console.log(data);
+    });
 
-        //Create a message string and page element
-        let receivedMsg = data.name + ": " + data.msg;
-        let msgEl = document.createElement('p');
-        msgEl.innerHTML = receivedMsg;
+    
+    let nameInput = document.getElementById('name-input')
+    let msgInput = document.getElementById('msg-input');
+    let sendButton = document.getElementById('send-button');
 
-        //Add the element with the message to the page
-        chatBox.appendChild(msgEl);
-        //Add a bit of auto scroll for the chat box
-        chatBox.scrollTop = chatBox.scrollHeight;
+    sendButton.addEventListener('click', function () {
+        let curName = nameInput.value;
+        let curMsg = msgInput.value;
+        let msgObj = { "name": curName, "msg": curMsg, "id": 1 };
+ 
+        
+        socket.emit('msg', msgObj);
     });
 
     let radioinput1 = document.getElementById("first-choice");

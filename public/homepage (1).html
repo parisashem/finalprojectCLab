@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    </link>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.js"></script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.css" />
+    <!-- <script src="app.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+    <title>Streak</title>
+</head>
+
+<body>
+    <header id="home">
+        <nav>
+            <a href= "#home"></a>
+            <div class= "menu">
+                <a href="#home">Home</a>
+                <a href="#groups">Groups</a>
+                <a href="#groups">Bets</a>
+                <a href="#leaderboard">Leaderboard</a>
+                <a href="#Group Watch">Group Watch</a>
+            </div>
+        </nav>
+    </header>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Time Locks At:</th>
+            <th scope="col">Question</th>
+            <th scope="col" style="width: 200px">Options</th>
+            <th scope="col"></th>
+            <th scope="col"># of Votes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="question-one" answer="1">
+            <th scope="row">1</th>
+            <td>How many puppies will there be?</td>
+            <td>
+              <div class="radio">
+                <label><input type="radio" id='first-choice' name="optradio">One</label>
+                <label id="first-choice-result" hidden="true">Here</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" id='second-choice' name="optradio">Two</label>
+                <label id="second-choice-result" hidden="true">Here</label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+   
+
+
+    <script>
+
+        // document.getElementById("button").addEventListener("click", function(){
+        //     document.querySelector("popup").style.display = "flex";
+        // })
+    </script>
+    
+
+
+</body>
+</html>

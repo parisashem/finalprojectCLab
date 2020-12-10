@@ -1,24 +1,24 @@
 var barChartData = {
     labels: [
-      "Absence of OB",
-      "Closeness",
-      "Credibility",
-      "Heritage",
-      "M Disclosure",
-      "Provenance",
-      "Reliability",
-      "Transparency"
+      "First Question",
+      "Second Question",
+      "Third Question",
+      "Fourth Question",
+      "Fifth Question",
+      "Sixth Question",
+      "Seventh Question",
+      "Eigth Question"
     ],
     datasets: [
       {
-        label: "American Express",
+        label: "First Choice",
         backgroundColor: "pink",
         borderColor: "red",
         borderWidth: 1,
         data: [3, 5, 6, 7,3, 5, 6, 7]
       },
       {
-        label: "Mastercard",
+        label: "Second Choice",
         backgroundColor: "lightblue",
         borderColor: "blue",
         borderWidth: 1,
@@ -34,7 +34,7 @@ var barChartData = {
     },
     title: {
       display: true,
-      text: "Chart.js Bar Chart"
+      text: "Results"
     },
     scales: {
       yAxes: [{

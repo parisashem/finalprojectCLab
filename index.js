@@ -11,29 +11,35 @@ server.listen(port, () => {
     console.log("Server listening at port: " + port);
 });
 
-// // Your web app's Firebase configuration
-// var firebaseConfig = {
-// apiKey: "AIzaSyAJd02D_vzcvGoK6_dWcAfLJhjPlpykVw8",
-// authDomain: "streak-cd4d1.firebaseapp.com",
-// databaseURL: "https://streak-cd4d1-default-rtdb.firebaseio.com",
-// projectId: "streak-cd4d1",
-// storageBucket: "streak-cd4d1.appspot.com",
-// messagingSenderId: "16910682487",
-// appId: "1:16910682487:web:77cc3af93fe99f175e7972"
-// };
-// // Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
+/*
 
+const admin = require('firebase-admin');
+
+const serviceAccount = require('./final-project-298122-696515c0e75a.json');
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
+
+const db = admin.firestore();
+
+const docRef = db.collection('users').doc('test');
+
+docRef.set({
+    score: 100
+    
+});
+*/
 
 //Initialize socket.io
 let io = require('socket.io').listen(server);
 
 //Listen for individual clients/users to connect
-io.sockets.on('connection', function(socket) {
+io.sockets.on('connection', function (socket) {
     console.log("We have a new client: " + socket.id);
 
     //Listen for a message named 'msg' from this client
-    socket.on('msg', function(data) {
+    socket.on('msg', function (data) {
         //Data can be numbers, strings, objects
         console.log("Received a 'msg' event");
         console.log(data);
@@ -49,10 +55,46 @@ io.sockets.on('connection', function(socket) {
     });
 
     //Listen for this client to disconnect
-    socket.on('disconnect', function() {
+    socket.on('disconnect', function () {
         console.log("A client has disconnected: " + socket.id);
     });
+
 });
+
+
+// const userInfo = [];
+// window.onload = () => {
+//     document.getElementById("confirmSignIn").addEventListener("click", signIn);
+//     document
+//       .getElementById("createAccount")
+//       .addEventListener("click", createAccount);
+//   };
+  
+//   const signIn = () => {
+//     auth.signInWithEmailAndPassword(document.getElementById('user').value, document.getElementById("password").value)
+//     .then(user => {
+//       if (user) {
+//         console.log(user);
+//         userInfo.push(user);
+//       }
+//     }).catch(err => {
+//       alert(err.message);
+//     })
+//   }
+
+//   const createAccount = () => {
+//     auth
+//     .createUserWithEmailAndPassword(document.getElementById('user').value, document.getElementById("password").value)
+//     .then(user => {
+//       if (user) {
+//         console.log(user);
+//         userInfo.push(user);
+//       }
+//     }).catch(err => {
+//       alert(err.message);
+//     })
+//   }
+  
 
 
 
@@ -91,19 +133,19 @@ io.sockets.on('connection', function(socket) {
 // let io = require('socket.io').listen(server);
 
 // const MongoClient = require('mongodb').MongoClient;
- 
+
 // // Connection URL
 // const url = 'mongodb://localhost:27017';
- 
+
 // // Database Name
 // const dbName = 'streak';
- 
+
 // // Use connect method to connect to the server
 // MongoClient.connect(url, function(err, client) {
 //   console.log("Connected successfully to server");
- 
+
 //   const db = client.db(dbName);
- 
+
 //     findUser(db, function() {
 //       client.close();
 //     });
